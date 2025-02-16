@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 // eslint-disable-next-line prettier/prettier
 import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config/constants';
+import { TransportePublicoModule } from './transporte-publico/transporte-publico.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config/co
       }),
       inject: [ConfigService],
     }),
+    TransportePublicoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
