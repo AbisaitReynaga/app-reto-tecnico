@@ -6,9 +6,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 // eslint-disable-next-line prettier/prettier
 import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config/constants';
 import { TransportePublicoModule } from './transporte-publico/transporte-publico.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
+    AuthModule,
     ConfigModule.forRoot({
       envFilePath: '.env',
       isGlobal: true,
@@ -28,6 +30,7 @@ import { TransportePublicoModule } from './transporte-publico/transporte-publico
       inject: [ConfigService],
     }),
     TransportePublicoModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
