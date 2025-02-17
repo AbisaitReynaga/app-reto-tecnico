@@ -18,23 +18,23 @@ export class TransportePublico {
   variable: string;
 
   @Column()
-  ID_entidad_unico: string;
+  id_entidad_unico: string;
 
   @Column()
-  ID_entidad: number;
+  id_entidad: number;
 
   @Column()
-  Clave_municipio_unico: string;
+  id_municipio_unico: string;
 
   @Column()
-  ID_Municipio: number;
+  id_municipio: number;
 
   @Column()
-  Municipio: string;
+  municipio: string;
 
   @Column()
-  Valor: number;
+  valor: number;
 
   @Column()
-  Estatus: string;
+  estatus: string;
 }
